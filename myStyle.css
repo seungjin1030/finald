@@ -1594,7 +1594,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* ── 썸네일 ── */
 .newsTrack .card .thumb {
   width: 100%;
   padding-top: 56.25%;
@@ -1602,7 +1601,6 @@ body {
   background-position: center;
 }
 
-/* ── 카드 정보 ── */
 .newsTrack .card .cardInfo {
   padding: 1rem;
   display: flex;
