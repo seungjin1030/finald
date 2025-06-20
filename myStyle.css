@@ -1,0 +1,1582 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: black;
+}
+
+#mainContainer {
+  width: 1420px;
+  margin: 0 auto;
+  padding-bottom: 7rem;
+}
+
+.mainTop {
+  position: relative;
+  width: 100%;
+  height: 108rem;
+  overflow: visible;
+}
+
+.mainTop2 {
+  position: relative;
+  width: 100%;
+  height: 484rem;
+  overflow: visible;
+}
+
+.mainTop3 {
+  position: relative;
+  width: 100%;
+  height: 132rem;
+  overflow: visible;
+}
+
+.site-footer {
+  position: absolute;
+  bottom: -7rem;
+  padding: 1rem;
+}
+.site-footer p {
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* ─── 배경 슬라이더 ───────────────────────── */
+.bg-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: translateY(100%);
+  transition: none;
+}
+
+/* active/prev 클래스가 붙을 때만 애니메이션 */
+.bg-slide.active,
+.bg-slide.prev {
+  transition: transform 1s ease-in-out;
+}
+
+.bg-slide.active {
+  transform: translateY(0);
+}
+
+.bg-slide.prev {
+  transform: translateY(-100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 2.5rem;
+  background-clip: padding-box;
+  isolation: isolate;
+}
+
+.bglass {
+  background: rgba(31, 31, 31, 0.4);
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 2.5rem;
+  background-clip: padding-box;
+  isolation: isolate;
+}
+
+#navi {
+  position: absolute;
+  top: 4.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 1322px);
+  height: 4.3rem;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  z-index: 10;
+}
+
+#navi a:hover {
+  color: #606060;
+}
+#navi a:active {
+  color: #606060;
+}
+
+#navi a {
+  font-family: "Pretendard";
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+#navi .nav__home {
+  position: absolute;
+  right: 1rem; /* 오른쪽 여백 */
+  top: 50%;
+  transform: translateY(-50%); /* 세로 중앙 정렬 */
+}
+
+/* 3) (선택) 검색 아이콘도 절대위치로 빼고 싶다면 */
+#navi .icon.search {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Title {
+  position: absolute;
+  top: 29.3rem;
+  left: 5rem;
+  z-index: 5;
+  width: 98.4rem;
+  height: 29.5rem;
+}
+
+.Title h1,
+.Title span {
+  font-family: "Pretendard", sans-serif;
+}
+
+.Title h1 {
+  font-size: 15rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 3rem;
+  line-height: 11rem;
+  color: white;
+}
+.Title span {
+  font-size: 6.4rem;
+  font-weight: 800;
+  color: white;
+}
+
+#sideLabel {
+  position: absolute;
+  right: 5.5rem;
+  transform: rotate(90deg);
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transform-origin: top right;
+  transition: top 1s ease;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 1.5rem;
+  padding: 0.8rem 1rem;
+  isolation: isolate;
+}
+
+.vLine {
+  position: absolute;
+  left: 7.4rem;
+  bottom: 24.7rem;
+  height: 24rem;
+  width: 1px;
+  background: rgb(255 255 255 / 50%);
+}
+
+.vLine2 {
+  position: absolute;
+  right: 5rem;
+  width: 4px;
+  background: #fff;
+  transition: top 1s ease;
+}
+
+.vLine3 {
+  position: absolute;
+  right: 5rem;
+  top: 19.5rem;
+  height: 43rem;
+  width: 1px;
+  background: rgb(255 255 255 / 50%);
+}
+/* ---- 5. CTA 버튼 ---------------------------------------------- */
+.cta {
+  position: absolute;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  right: 16rem;
+  top: 49.8rem;
+}
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  font-family: "Pretendard";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn:hover {
+  background: rgb(255 255 255 / 18%);
+}
+
+/* ---- 6. 소개 카피 --------------------------------------------- */
+.introTitle {
+  font-family: pretendard;
+  position: absolute;
+  left: 6.6rem;
+  bottom: 22rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+.intro {
+  position: absolute;
+  left: 5rem;
+  bottom: 7rem;
+  width: 41rem;
+  height: 14.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 2rem;
+  margin-top: 2.2rem;
+}
+.intro p1 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-left: 2rem;
+}
+
+/* ---- 7. 뉴스 슬라이더 ----------------------------------------- */
+.news {
+  position: absolute;
+  right: 5rem;
+  bottom: 6rem;
+  width: 65rem;
+  height: 32.3rem;
+}
+.news h3 {
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-left: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.newsTrack {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  scroll-padding-left: 3rem;
+  scroll-padding-right: 3rem;
+  box-sizing: content-box;
+  padding: 0 3rem 0 3rem;
+}
+
+.newsTrack {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card {
+  flex: 0 0 22.5rem;
+  height: 24.2rem;
+  width: 22.5rem;
+  background: #ddd;
+  border-radius: 1.5rem;
+  scroll-snap-align: start;
+}
+
+.page-title {
+  position: absolute;
+  font-family: "pretendard";
+  font-size: 3.2rem;
+  margin-top: 18.7rem;
+  color: #fff;
+}
+#developt {
+  margin-left: 18rem;
+}
+
+#gen1 {
+  position: absolute;
+  width: 70rem;
+  height: 38.3rem;
+  margin-top: 28.5rem;
+  right: 18rem;
+}
+
+#gen2 {
+  position: absolute;
+  width: 62.1rem;
+  height: 43.2rem;
+  margin-top: 88.2rem;
+  margin-left: 18rem;
+}
+#gen3 {
+  position: absolute;
+  width: 70rem;
+  height: 54rem;
+  margin-top: 161rem;
+  margin-left: 54rem;
+}
+#gen4 {
+  position: absolute;
+  width: 70rem;
+  height: 40.6rem;
+  margin-top: 210rem;
+  margin-left: 18rem;
+}
+#gen5 {
+  position: absolute;
+  width: 88rem;
+  height: 45rem;
+  margin-top: 283rem;
+  margin-left: 18rem;
+}
+#gen6 {
+  position: absolute;
+  width: 66rem;
+  height: 60.6rem;
+  margin-top: 325rem;
+  margin-left: 58rem;
+}
+#gen7 {
+  position: absolute;
+  width: 87.7rem;
+  height: 60.6rem;
+  margin-top: 383rem;
+  margin-left: 18rem;
+}
+
+.navline {
+  position: absolute;
+  width: 66px;
+  height: 3px;
+  background-color: #fff;
+  z-index: 11;
+  border-radius: 2px;
+}
+
+#developmentline {
+  top: 8.1rem;
+  left: 52.2rem;
+}
+#typeline {
+  top: 8.1rem;
+  left: 67.7rem;
+}
+#technologyline {
+  top: 8.1rem;
+  left: 83.3rem;
+}
+
+#bgbr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bgglass {
+  background: rgba(107, 107, 107, 0.1);
+  backdrop-filter: blur(25rem);
+  -webkit-backdrop-filter: blur(20rem);
+  background-clip: padding-box;
+  isolation: isolate;
+}
+
+#dbg1 {
+  position: absolute;
+  background-color: #547980;
+  width: 30rem;
+  height: 70rem;
+}
+
+#dbg2 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 70rem;
+  height: 130rem;
+  margin-left: 30rem;
+}
+#dbg3 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 42rem;
+  height: 40rem;
+  margin-left: 100rem;
+}
+#dbg4 {
+  position: absolute;
+  background-color: #45ada8;
+  width: 22rem;
+  height: 50rem;
+  margin-left: 120rem;
+  margin-top: 40rem;
+}
+#dbg5 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 25rem;
+  height: 20rem;
+  margin-top: 70rem;
+}
+#dbg6 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 30rem;
+  height: 50rem;
+  margin-left: 110rem;
+  margin-top: 90rem;
+}
+#dbg7 {
+  position: absolute;
+  background-color: #547980;
+  width: 40rem;
+  height: 70rem;
+  margin-left: 102rem;
+  margin-top: 140rem;
+}
+#dbg8 {
+  position: absolute;
+  background-color: #45ada8;
+  width: 35rem;
+  height: 70rem;
+  margin-top: 140rem;
+}
+#dbg9 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 25rem;
+  height: 70rem;
+  margin-top: 210rem;
+}
+#dbg10 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 40rem;
+  height: 70rem;
+  margin-top: 230rem;
+  margin-left: 102rem;
+}
+#dbg11 {
+  position: absolute;
+  background-color: #547980;
+  width: 70rem;
+  height: 70rem;
+  margin-top: 260rem;
+  margin-left: 40rem;
+}
+#dbg12 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 30rem;
+  height: 70rem;
+  margin-top: 260rem;
+}
+#dbg13 {
+  position: absolute;
+  background-color: #594f4f;
+  width: 100rem;
+  height: 70rem;
+  margin-top: 330rem;
+}
+#dbg14 {
+  position: absolute;
+  background-color: #45ada8;
+  width: 40rem;
+  height: 70rem;
+  margin-top: 330rem;
+  margin-left: 102rem;
+}
+#dbg15 {
+  position: absolute;
+  background-color: #45ada8;
+  width: 20rem;
+  height: 70rem;
+  margin-top: 400rem;
+}
+#dbg16 {
+  position: absolute;
+  background-color: #547980;
+  width: 80rem;
+  height: 70rem;
+  margin-top: 400rem;
+  margin-left: 40rem;
+}
+
+/*----------사진----------------*/
+#robotImg1 {
+  position: absolute;
+  top: 25rem;
+  left: 104.3rem;
+  width: 21.7rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg2 {
+  position: absolute;
+  top: 52.5rem;
+  left: 90.7rem;
+  width: 19.4rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg3 {
+  position: absolute;
+  top: 99rem;
+  left: 12.8rem;
+  width: 31.1rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg4 {
+  position: absolute;
+  top: 106.4rem;
+  left: 73.6rem;
+  width: 21.5rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg5 {
+  position: absolute;
+  top: 157rem;
+  left: 42rem;
+  width: 29rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg6 {
+  position: absolute;
+  top: 165rem;
+  left: 106.7rem;
+  width: 26.5rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg7 {
+  position: absolute;
+  top: 194.8rem;
+  left: 7.2rem;
+  width: 28.8rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg8 {
+  position: absolute;
+  top: 231rem;
+  left: 65.7rem;
+  width: 45.7rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg9 {
+  position: absolute;
+  top: 286rem;
+  left: 11rem;
+  width: 25.5rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg10 {
+  position: absolute;
+  top: 305.8rem;
+  left: 85.6rem;
+  width: 28.3rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg11 {
+  position: absolute;
+  top: 334.4rem;
+  left: 39.5rem;
+  width: 24rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg12 {
+  position: absolute;
+  top: 354.5rem;
+  left: 107.4rem;
+  width: 21.6rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg13 {
+  position: absolute;
+  top: 377.3rem;
+  left: 9rem;
+  width: 27.5rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+#robotImg14 {
+  position: absolute;
+  top: 401.6rem;
+  left: 92.2rem;
+  width: 27.2rem;
+  z-index: 1;
+  border-radius: 1rem;
+}
+
+#tyear {
+  position: absolute;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  margin-top: 33rem;
+  margin-left: 24.5rem;
+}
+#tyears {
+  position: absolute;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  margin-top: 36rem;
+  margin-left: 36.5rem;
+}
+
+.geny {
+  position: absolute;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 40px;
+  z-index: 1;
+}
+/*----------세대----------------*/
+#ygen1 {
+  margin-top: 29.7rem;
+  margin-left: 55.8rem;
+}
+#ygen2 {
+  margin-top: 84.3rem;
+  margin-left: 19.7rem;
+}
+#ygen3 {
+  margin-top: 155rem;
+  margin-left: 109.6rem;
+}
+#ygen4 {
+  margin-top: 278.8rem;
+  margin-left: 87rem;
+}
+
+/*----------로봇이름----------------*/
+.gt {
+  position: absolute;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+}
+
+#gtitle1 {
+  margin-top: 31.1rem;
+  margin-left: 71rem;
+}
+#gtitle2 {
+  margin-top: 55rem;
+  margin-left: 57.6rem;
+}
+#gtitle3 {
+  margin-top: 90.4rem;
+  margin-left: 36rem;
+}
+#gtitle4 {
+  margin-top: 116rem;
+  margin-left: 49.6rem;
+}
+#gtitle5 {
+  margin-top: 162.4rem;
+  margin-left: 72.6rem;
+}
+#gtitle6 {
+  margin-top: 202.2rem;
+  margin-left: 96.8rem;
+  text-align: right;
+}
+#gtitle7 {
+  margin-top: 211.6rem;
+  margin-left: 38.1rem;
+}
+#gtitle8 {
+  margin-top: 234.6rem;
+  margin-left: 40.9rem;
+}
+#gtitle9 {
+  margin-top: 286.5rem;
+  margin-left: 38.1rem;
+}
+#gtitle10 {
+  margin-top: 308rem;
+  margin-left: 56.5rem;
+}
+#gtitle11 {
+  margin-top: 335.4rem;
+  margin-left: 65.1rem;
+}
+#gtitle12 {
+  margin-top: 356rem;
+  margin-left: 86.7rem;
+}
+#gtitle13 {
+  margin-top: 386.3rem;
+  margin-left: 39.5rem;
+}
+#gtitle14 {
+  margin-top: 412.9rem;
+  margin-left: 58.2rem;
+}
+
+/*----------부제목----------------*/
+.gs {
+  position: absolute;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+}
+#gsubt1 {
+  margin-top: 34.5rem;
+  margin-left: 71rem;
+}
+#gsubt2 {
+  margin-top: 93.8rem;
+  margin-left: 36rem;
+}
+#gsubt3 {
+  margin-top: 119.4rem;
+  margin-left: 46.3rem;
+}
+#gsubt4 {
+  margin-top: 165.8rem;
+  margin-left: 72.6rem;
+}
+#gsubt5 {
+  margin-top: 215rem;
+  margin-left: 38.1rem;
+}
+#gsubt6 {
+  margin-top: 238rem;
+  margin-left: 28.5rem;
+}
+#gsubt7 {
+  margin-top: 289.9rem;
+  margin-left: 38.2rem;
+}
+#gsubt8 {
+  margin-top: 311.4rem;
+  margin-left: 42.3rem;
+}
+#gsubt9 {
+  margin-top: 338.8rem;
+  margin-left: 65.1rem;
+}
+#gsubt10 {
+  margin-top: 359.4rem;
+  margin-left: 84.5rem;
+}
+#gsubt11 {
+  margin-top: 389.8rem;
+  margin-left: 39.5rem;
+}
+#gsubt12 {
+  margin-top: 416.4rem;
+  margin-left: 61.4rem;
+}
+
+/*----------설명----------------*/
+.gp {
+  position: absolute;
+  color: #fff;
+  font-family: SUIT;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+#gp1 {
+  margin-top: 43rem;
+  margin-left: 56rem;
+}
+#gp2 {
+  margin-top: 58.9rem;
+  margin-left: 55.6rem;
+  text-align: right;
+}
+#gp3 {
+  margin-top: 98.7rem;
+  margin-left: 45.7rem;
+}
+#gp4 {
+  margin-top: 122.9rem;
+  margin-left: 31.3rem;
+  text-align: right;
+}
+#gp5 {
+  margin-top: 169.3rem;
+  margin-left: 72.7rem;
+}
+#gp6 {
+  margin-top: 195.4rem;
+  margin-left: 56.1rem;
+}
+#gp7 {
+  margin-top: 218.5rem;
+  margin-left: 38.1rem;
+}
+#gp8 {
+  margin-top: 241.5rem;
+  margin-left: 19.6rem;
+  text-align: right;
+}
+#gp9 {
+  margin-top: 293.4rem;
+  margin-left: 38.1rem;
+}
+#gp10 {
+  margin-top: 314.9rem;
+  margin-left: 21.3rem;
+  text-align: right;
+}
+#gp11 {
+  margin-top: 342.3rem;
+  margin-left: 65.1rem;
+}
+#gp12 {
+  margin-top: 362.9rem;
+  margin-left: 63rem;
+  text-align: right;
+}
+#gp13 {
+  margin-top: 393.3rem;
+  margin-left: 39.5rem;
+}
+#gp14 {
+  margin-top: 419.9rem;
+  margin-left: 29.8rem;
+  text-align: right;
+}
+
+.connect {
+  position: absolute;
+  border-radius: 2.5px;
+}
+#line1 {
+  top: 34rem;
+  left: 38.7rem;
+  width: 13.3rem;
+  border: none;
+  border-top: 4px solid #fff;
+}
+#line2 {
+  top: 61rem;
+  left: 36rem;
+  width: 15.8rem;
+  height: 25rem;
+  border: none;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+}
+#line3 {
+  top: 100rem;
+  left: 83rem;
+  width: 25rem;
+  height: 58rem;
+  border: none;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+}
+#line4 {
+  top: 252rem;
+  left: 32.5rem;
+  width: 53rem;
+  height: 15rem;
+  border: none;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+}
+#line5 {
+  top: 267rem;
+  left: 32.5rem;
+  width: 53rem;
+  height: 14rem;
+  border: none;
+  border-right: 4px solid #fff;
+}
+
+.bbox {
+  position: absolute;
+  width: 340px;
+  height: 60px;
+  border-radius: 10px;
+  background: #fff;
+  margin-top: 454.5rem;
+}
+#bbox1 {
+  margin-left: 33rem;
+}
+#bbox2 {
+  margin-left: 75rem;
+}
+#bbox1 a {
+  display: inline-block;
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 1.5rem;
+  margin-left: 3.9rem;
+  text-decoration: none;
+}
+#bbox2 a {
+  display: inline-block;
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 1.5rem;
+  margin-left: 3.9rem;
+  text-decoration: none;
+}
+
+#typet {
+  margin-left: 55rem;
+}
+
+.typebox {
+  position: absolute;
+  width: 195px;
+  height: 350px;
+  border-radius: 2rem;
+  margin-top: 42.2rem;
+}
+
+#rtype1 {
+  margin-left: 18rem;
+}
+#rtype2 {
+  margin-left: 46.8rem;
+}
+#rtype3 {
+  margin-left: 75.6rem;
+}
+#rtype4 {
+  margin-left: 104.4rem;
+}
+
+#typeO {
+  width: 17.5rem;
+  margin: 1rem;
+  border-radius: 1.1rem;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.typebutton {
+  position: absolute;
+  width: 175px;
+  height: 30px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  background-color: #252525;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+}
+
+.typeti {
+  position: absolute;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 5px;
+  margin-left: 6rem;
+}
+
+.robotname {
+  position: absolute;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 38.2rem;
+}
+#robotname1 {
+  margin-left: 19rem;
+}
+#robotname2 {
+  margin-left: 47.7rem;
+}
+#robotname3 {
+  margin-left: 76.6rem;
+}
+#robotname4 {
+  margin-left: 105.1rem;
+}
+
+.robotcontainer {
+  position: absolute;
+  width: 142rem;
+  height: 83.7rem;
+  border-top: 1px solid#fff;
+  border-bottom: 1px solid#fff;
+}
+.robotcontainer img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#robotcontainer1 {
+  margin-top: 108rem;
+}
+#robotcontainer2 {
+  margin-top: 201.7rem;
+}
+#robotcontainer3 {
+  margin-top: 295.4rem;
+}
+#robotcontainer4 {
+  margin-top: 389.1rem;
+}
+
+#robotbimg {
+  position: absolute;
+  width: 142rem;
+}
+
+.typecontainer {
+  position: relative;
+  width: 136rem;
+  height: 76.7rem;
+  margin-left: 3rem;
+  margin-top: 3.5rem;
+  margin-left: 3rem;
+}
+
+.rtypet {
+  position: absolute;
+  display: block;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  font-family: "Pretendard";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 2.6rem;
+  margin-left: 2.7rem;
+}
+
+.robot-content {
+  display: grid;
+  grid-template-columns: 48.4rem 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "spec features";
+  padding-inline: 8rem;
+  margin-top: 8rem;
+  gap: 11.7rem;
+}
+
+/* 1) 스펙 영역 */
+.spec-list {
+  grid-area: spec;
+  margin-top: 7.4rem;
+}
+.spec-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 0 5px;
+  border-bottom: 2px dashed rgb(255, 255, 255, 0.3);
+}
+
+.spec-item dt {
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.spec-item dd {
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.features {
+  grid-area: features;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-list {
+  list-style: disc outside;
+  padding: 0;
+  margin: 0;
+}
+.feature-list li {
+  margin-bottom: 2.5rem;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#op1 {
+  display: block;
+  width: 12.4rem !important;
+  height: 20rem !important;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 33.9rem;
+}
+#op2 {
+  display: block;
+  width: 25.1rem;
+  height: 20rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 82.6rem;
+  margin-top: 33.9rem;
+}
+#op3 {
+  display: block;
+  width: 12.4rem;
+  height: 20rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 109rem;
+  margin-top: 33.9rem;
+}
+#op4 {
+  display: block;
+  width: 14rem;
+  height: 17rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 55.2rem;
+}
+#op5 {
+  display: block;
+  width: 25rem;
+  height: 17rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 84.4rem;
+  margin-top: 55.2rem;
+}
+#op6 {
+  display: block;
+  width: 14rem;
+  height: 17rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 110.7rem;
+  margin-top: 55.2rem;
+}
+#fi021 {
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 33.6rem;
+}
+#fi022 {
+  display: block;
+  width: 28rem;
+  height: 20rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 90rem;
+  margin-top: 33.6rem;
+}
+#fi023 {
+  display: block;
+  width: 28rem;
+  height: 17rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 55.3rem;
+}
+#fi024 {
+  display: block;
+  width: 26.5rem;
+  height: 17rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 98.5rem;
+  margin-top: 55.3rem;
+}
+#atl1 {
+  display: block;
+  width: 28rem;
+  height: 21.6rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 73.5rem;
+  margin-top: 33.6rem;
+}
+#atl2 {
+  display: block;
+  width: 22rem;
+  height: 35.6rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 103rem;
+  margin-top: 36rem;
+}
+#atl3 {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 56.8rem;
+}
+#atl4 {
+  display: block;
+  width: 16.6rem;
+  height: 15rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 85rem;
+  margin-top: 56.8rem;
+}
+#apol1 {
+  display: block;
+  width: 26.8rem;
+  height: 16.8rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 32rem;
+}
+#apol2 {
+  display: block;
+  width: 18.5rem;
+  height: 24rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 97rem;
+  margin-top: 32rem;
+}
+#apol3 {
+  display: block;
+  width: 26.5rem;
+  height: 22rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 69rem;
+  margin-top: 50rem;
+}
+#apol4 {
+  display: block;
+  width: 26.5rem;
+  height: 14.6rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  object-fit: cover;
+  margin-left: 97rem;
+  margin-top: 57rem;
+}
+
+.tecbox {
+  position: absolute;
+  width: 34rem;
+  height: 43rem;
+}
+
+#tecbox1 {
+  margin-top: 32.5rem;
+  margin-left: 33rem;
+}
+#tecbox2 {
+  margin-top: 32.5rem;
+  margin-left: 75rem;
+}
+#tecbox3 {
+  margin-top: 79rem;
+  margin-left: 18rem;
+}
+#tecbox4 {
+  margin-top: 79rem;
+  margin-left: 54rem;
+}
+#tecbox5 {
+  margin-top: 79rem;
+  margin-left: 90rem;
+}
+.tect {
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px;
+  margin-top: 1.7rem;
+  margin-left: 1rem;
+}
+.tecst {
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  line-height: 25px;
+  margin-top: 31.5rem;
+  justify-content: center;
+}
+[id^="robotcontainer"] {
+  scroll-margin-top: 6rem;
+}
+.view-link {
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+}
+.tecmp {
+  position: absolute;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  margin-left: 2.3rem;
+}
+#tecmp1 {
+  margin-top: 2rem;
+}
+#tecmp2 {
+  margin-top: 9rem;
+}
+#tecmp3 {
+  margin-top: 16rem;
+}
+#tecmp4 {
+  margin-top: 23rem;
+}
+
+.tecp {
+  position: absolute;
+  color: #fff;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin-left: 2.3rem;
+}
+#tecp1 {
+  margin-top: 4.5rem;
+}
+#tecp2 {
+  margin-top: 11.5rem;
+}
+#tecp3 {
+  margin-top: 18.5rem;
+}
+#tecp4 {
+  margin-top: 25.5rem;
+}
+#tecp21 {
+  margin-top: 11.5rem;
+}
+#tecp22 {
+  margin-top: 18.5rem;
+}
+#tecp23 {
+  margin-top: 25.5rem;
+}
+#tecmp21 {
+  margin-top: 2rem;
+}
+#tecmp22 {
+  margin-top: 9rem;
+}
+#tecmp23 {
+  margin-top: 16rem;
+}
+#tecmp24 {
+  margin-top: 23rem;
+}
+
+#tecp31 {
+  margin-top: 11.5rem;
+}
+#tecp32 {
+  margin-top: 18.5rem;
+}
+#tecp33 {
+  margin-top: 25.5rem;
+}
+#tecmp31 {
+  margin-top: 2rem;
+}
+#tecmp32 {
+  margin-top: 9rem;
+}
+#tecmp33 {
+  margin-top: 16rem;
+}
+#tecmp34 {
+  margin-top: 23rem;
+}
+
+#tecp41 {
+  margin-top: 11.5rem;
+}
+#tecp42 {
+  margin-top: 18.5rem;
+}
+#tecp43 {
+  margin-top: 25.5rem;
+}
+#tecmp41 {
+  margin-top: 2rem;
+}
+#tecmp42 {
+  margin-top: 9rem;
+}
+#tecmp43 {
+  margin-top: 16rem;
+}
+#tecmp44 {
+  margin-top: 23rem;
+}
+
+#tecp51 {
+  margin-top: 11.5rem;
+}
+#tecp52 {
+  margin-top: 18.5rem;
+}
+#tecp53 {
+  margin-top: 25.5rem;
+}
+#tecmp51 {
+  margin-top: 2rem;
+}
+#tecmp52 {
+  margin-top: 9rem;
+}
+#tecmp53 {
+  margin-top: 16rem;
+}
+#tecmp54 {
+  margin-top: 23rem;
+}
